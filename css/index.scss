@@ -1,0 +1,95 @@
+@import "bourbon";
+
+$bgColor:       #FFF;
+$headerHeight:  57px;
+
+/* make transparent link selection, adjust last value opacity 0 to 1.0 */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+  -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+  -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+  background-color:#F2F2F2;
+  @include linear-gradient(to top, #DDDDDD, #F2F2F2);
+  background-attachment:fixed;
+  font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  font-size:12px;
+  height:100%;
+  margin:0px;
+  padding:0px;
+  width:100%;
+}
+
+/* Portrait layout (default) */
+.splash {
+    /* background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+#app {
+
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.pull-right {
+  float:right;
+}
+
+.pull-left {
+  float:left;
+}
+
+.clear {
+  clear:both
+}
+
+#app #header {
+  box-shadow: 0 1px 7px rgba(0, 0, 0, .4);
+  -webkit-box-shadow: 0 1px 7px rgba(0, 0, 0, .4);
+  padding:12px;
+  background-color:$bgColor;
+  position:fixed;
+  height:$headerHeight;
+  top:0px;
+  right:0px;
+  left:0px;
+  z-index:999;
+}
+
+.page {  
+  margin-top:57px;
+  padding: 5%;
+}
+
+
+#header h1 {
+  display: inline;
+  padding-left: 15px;
+  line-height: 52px;
+  font-size: 31px;
+  color: #888;
+}
