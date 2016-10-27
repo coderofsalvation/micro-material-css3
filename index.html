@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+<!--        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"/> -->
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="msapplication-tap-highlight" content="no"/>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"/>
+        <!-- apple time -->
+        <link rel="apple-touch-icon" href="img/icon-72.png"/>
+        <link rel="apple-touch-icon-precomposed" href="img/icon-72.png"/>
+        <link rel="icon" type="image/png" href="img/icon-72.png" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="white">
+        <link rel="apple-touch-startup-image" href="img/splash_phone.png">
+
+        <link rel="stylesheet" type="text/css" href="css/spinner.css"/>
+        <link rel="manifest" href="manifest.json">
+        <title>Your app</title>
+    </head>
+    <body>
+        <div id="loadscreen">
+          <div class='uil-ripple-css'><div></div><div></div></div>
+        </div>
+        <div id="app">
+          <div id="header">
+            <img class="pull-left" src="img/logo.png" style="height:57px"></img>
+            <h1>Hello world</h1>
+            <button id="header_menu" class="pull-right">&equiv;</button>
+          </div>  
+    
+          <!-- Page: Home -->
+          <div id="home" class="clear page" style="display:none">
+            <x-foo class="x-foo" data-value="" data-id="foo"></x-foo>
+            <button class="wide" id="input">input text</button><br>
+          </div>
+
+          <!-- Page: Media -->
+          <div id="media" class="clear page" style="display:none">
+            <x-mediabutton id="campic"   type="camera"></x-mediabutton>
+            <x-mediabutton id="camvideo" type="video" ></x-mediabutton>
+            <x-mediabutton id="audio"    type="audio" ></x-mediabutton>
+          </div>
+
+          <!-- Page: Calendar -->
+          <div id="calendar" class="clear page" style="display:none;width:100%;height:100%;padding:0">
+            <iframe src="https://calendar.google.com/calendar/embed?src=676hgm91cm0cpajqlbifbgr18g%40group.calendar.google.com&ctz=Europe/Amsterdam" style="border: 0" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+          </div>
+
+        </div>
+
+        <!-- webcomponents --> 
+        <template id="x-foo">
+           <h1>&lt;x-foo&gt;</h1>
+           <div style="text-align:center">
+             data-value: &nbsp;
+             <span class="foo"></b>
+           </div>
+           <br><br>
+        </template>
+        <script type="text/javascript" src="js/elements/x-foo.js"></script>
+
+        <template id="x-mediabutton-camera">
+          <label class="file">
+            <input type="file" accept="image/*;capture=camera" capture="camera"/>
+            <span>Take picture</span>
+          </label>
+        </template>
+        <template id="x-mediabutton-video">
+          <label class="file">
+            <input type="file" accept="video/*;capture=camcorder" capture="camcorder"/>
+            <span>Take video</span>
+          </label>
+        </template>
+        <template id="x-mediabutton-audio">
+          <label class="file">
+            <input type="file" accept="audio/*;capture=microphone" capture="microphone"/>
+            <span>Record audio</span>
+          </label>
+        </template>
+        <script type="text/javascript" src="js/elements/x-mediabutton.js"></script>
+
+
+        <link rel="stylesheet" type="text/css" href="css/ui.css"/>
+        <link rel="stylesheet" type="text/css" href="css/index.css"/>
+        <link rel="stylesheet" type="text/css" href="css/notie.css"/>
+        <script type="text/javascript" src="js/zepto.min.js"></script>
+        <script type="text/javascript" src="js/notie.min.js"></script>
+        <script type="text/javascript" src="js/document-register-element.js"></script>
+        <script type="text/javascript" src="js/micromaterial.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+    </body>
+</html>

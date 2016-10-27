@@ -1,0 +1,115 @@
+.icon {
+  font-size:40px;
+}
+
+#app button, 
+#app input,
+label.file {
+  margin-bottom:15px;
+  border:none;
+  font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  padding: 13px;
+  padding-left:15px;
+  padding-right:15px;
+}
+
+button#header_menu {
+  background: #FFF;
+  border: 1px solid #AAA;
+  color: #888;
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+button,label.file {
+  background-color:rgb(64, 128, 255);
+  color: #FFF;
+  pointer: cursor;
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.0);
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.0);
+  text-transform: capitalize;
+  border-radius: 5px;
+}
+
+button:hover,
+input:hover,
+label.file:hover {
+  opacity: 0.7;
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(1.0, 1.0, 1.0, 0.3);
+  box-shadow: 0px 0px 6px 0px rgba(1.0, 1.0, 1.0, 0.3);
+}
+
+label.file input[type="file"] {
+    position: fixed;
+    top: -1000px;
+}
+
+/***** Example custom styling *****/
+.file {
+  text-align:center;
+  display: block;
+}
+label.file :invalid + span {}
+label.file :valid + span   {}
+
+.wide button,
+.wide {
+  width: 100%; 
+}
+
+/* fastclick fix for clicking labels in safari */
+label > * {
+    display: block;
+    pointer-events: none;
+}
+
+div#loadscreen{
+  pointer-events: none;
+  position:absolute;
+  top:82px;
+  left:0;
+  background-color: #FFF;
+  width:100%;
+  height:100%;
+  z-index:1000;
+  text-align:center;
+  transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .5s ease-in-out;
+  -webkit-transition: opacity .5s ease-in-out;
+}
+
+
+
+/* Material textinput */
+
+.inputlabel {
+  font-family: "Helvetica Neue", Helvetica, Arial, Verdana, "Trebuchet MS";
+  white-space: nowrap;
+  color:#888;
+  font-weight: 400;
+  text-transform: capitalize;
+  font-size:11px;
+  line-height:10px;
+}
+
+.form-control{
+  line-height:50px;
+  color: #555;
+  background-color:transparent;
+  padding:0;
+  border:none;
+  width:100% !important;
+  border-bottom: 1px solid #DDD;
+  margin-bottom:19px;
+}
+.error .form-control {
+  border-bottom: 2px solid red;
+}
+
+.input-bar {
+  width: 0;
+  height: 100%;
+  transition: height .3s;
+  background: #000;
+}
