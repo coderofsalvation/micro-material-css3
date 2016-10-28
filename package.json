@@ -11,7 +11,7 @@
   "dependencies": {
   },
   "devDependencies": {
-    "hammerjs": "^2.0.8", :
+    "hammerjs": "^2.0.8",
     "document-register-element": "^1.1.1",
     "notie": "git+https://github.com/coderofsalvation/notie.git"
   }
