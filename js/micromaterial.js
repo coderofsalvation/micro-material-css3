@@ -1,5 +1,11 @@
 var micromaterial = function(){
+
   this.isLoading = false
+  this.page = {
+    home: false, 
+    last: false, 
+    current: false
+  }
 
   this.loading = function(state,cb){
     $('#loadscreen').css({ 'opacity': (state ? 1.0 : 0.0 ) })
@@ -11,12 +17,23 @@ var micromaterial = function(){
     }, 500, this, state, cb )
   }
 
+  this.back = function(){
+    this.showPage( this.page.last )
+  }
+
   this.showPage = function(id){
     var me = this;
+    if( !this.page.home ) this.page.home = id // remember first page as homepage
+    this.page.last = this.page.current  // remember current page as last page
+    this.page.current = id        // remember current page
     this.loading(true, function(){
       $('.page').css({'display':'none'})
       $(id).css({'display':'block'})
       $(id).css({'height': ($(window).height() - $('#header').height())+"px" }) 
+      if( id == me.page.home ) 
+        $('button#back').css({'margin-left': '-500px'}) // hide back button on homepage
+      else
+        $('button#back').css({'margin-left': '0px'})
       me.loading(false)
     })
   }
@@ -30,7 +47,14 @@ var micromaterial = function(){
       return document.registerElement( type, prototype )
   }
 
+  this.init = function(){
+    $('button#back').on('click', this.back.bind(this) )
+  }
+
+  this.init()
+
   return {
+    back: this.back.bind(this), 
     showPage: this.showPage.bind(this), 
     loading: this.loading.bind(this), 
     registerElement: this.registerElement.bind(this)

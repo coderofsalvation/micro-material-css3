@@ -14,6 +14,7 @@ label.file {
   padding-right:15px;
 }
 
+button#back, 
 button#header_menu {
   background: #FFF;
   border: 1px solid #AAA;
@@ -43,6 +44,15 @@ label.file:hover {
 label.file input[type="file"] {
     position: fixed;
     top: -1000px;
+}
+
+button#back {
+  margin-right: 15px;
+  position:relative;
+  margin-left:-300px;
+  transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
 }
 
 /***** Example custom styling *****/

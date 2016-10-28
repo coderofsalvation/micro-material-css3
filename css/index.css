@@ -24,6 +24,7 @@ body {
     margin:0px;
     padding:0px;
     width:100%;
+    overflow:hidden;
 }
 
 div#grow {
@@ -118,8 +119,14 @@ template {
 }
 
 .page {  
-  margin-top:87px;
+  min-height:100%;
   padding: 3%;
+}
+
+div#container{
+  margin-top:87px;
+  overflow:hidden;
+  overflow-y:scroll;
 }
 
 

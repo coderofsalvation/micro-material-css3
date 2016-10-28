@@ -34,27 +34,25 @@
         </div>
         <div id="app">
           <div id="header">
+            <button id="back" class="pull-left">&lt;</button>
             <img class="pull-left" src="img/logo.png" style="height:57px"></img>
             <h1>Hello world</h1>
             <button id="header_menu" class="pull-right">&equiv;</button>
           </div>  
-    
-          <!-- Page: Home -->
-          <div id="home" class="clear page" style="display:none">
-            <x-foo class="x-foo" data-value="" data-id="foo"></x-foo>
-            <button class="wide" id="input">input text</button><br>
-          </div>
+          <div id="container"> 
+            <!-- Page: Home -->
+            <div id="home" class="clear page" style="display:none">
+              <x-foo class="x-foo" data-value="" data-id="foo"></x-foo>
+              <button class="wide" id="input">input text</button><br>
+              <button class="wide" id="button-media">open media-page</button><br>
+            </div>
 
-          <!-- Page: Media -->
-          <div id="media" class="clear page" style="display:none">
-            <x-mediabutton id="campic"   type="camera"></x-mediabutton>
-            <x-mediabutton id="camvideo" type="video" ></x-mediabutton>
-            <x-mediabutton id="audio"    type="audio" ></x-mediabutton>
-          </div>
-
-          <!-- Page: Calendar -->
-          <div id="calendar" class="clear page" style="display:none;width:100%;height:100%;padding:0">
-            <iframe src="https://calendar.google.com/calendar/embed?src=676hgm91cm0cpajqlbifbgr18g%40group.calendar.google.com&ctz=Europe/Amsterdam" style="border: 0" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+            <!-- Page: Media -->
+            <div id="media" class="clear page" style="display:none">
+              <x-mediabutton id="campic"   type="camera"></x-mediabutton>
+              <x-mediabutton id="camvideo" type="video" ></x-mediabutton>
+              <x-mediabutton id="audio"    type="audio" ></x-mediabutton>
+            </div>
           </div>
 
         </div>

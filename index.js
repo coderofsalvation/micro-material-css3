@@ -4,21 +4,21 @@ document.querySelector('#header_menu').onclick = function(e){
       title: 'Home',
       color: '#555555',
       handler: function () {
-        woofr.showPage('#home')
+        mmcss3.showPage('#home')
       }
     },
     {
       title: 'Media',
       color: '#444444',
       handler: function () {
-        woofr.showPage('#media')
+        mmcss3.showPage('#media')
       }
     },
     {
       title: 'Calendar',
       color: '#222222',
       handler: function () {
-        woofr.showPage('#calendar') //notie.alert(3, 'Foo bar!', 3)
+        mmcss3.showPage('#calendar') //notie.alert(3, 'Foo bar!', 3)
       }
     }
   ])
@@ -46,6 +46,7 @@ var mmcss3 = new micromaterial()
 mmcss3.registerElement("x-foo", new xFoo ) // registers dom element <x-foo> to browser
 mmcss3.registerElement("x-mediabutton", new xMediaButton ) 
 //mmcss3.registerElement("x-template", new xTemplate ) // *TODO* 
+$('#button-media').on('click', function(){ mmcss3.showPage('#media') })
 
 setTimeout( function(){
   mmcss3.showPage('#home')
