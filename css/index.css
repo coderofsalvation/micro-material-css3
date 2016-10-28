@@ -27,8 +27,7 @@ body {
     overflow:hidden;
 }
 
-div#grow {
-  overflow:hidden;
+.grow {
   transition:all 0.3s ease;
 }
 

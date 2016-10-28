@@ -1,6 +1,6 @@
 {
   "name": "micro-material-css3",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,9 +10,9 @@
   "license": "ISC",
   "dependencies": {
   },
-  "devDependencies":{
+  "devDependencies": {
+    "hammerjs": "^2.0.8", :
     "document-register-element": "^1.1.1",
-    "fastclick": "^1.0.6",
     "notie": "git+https://github.com/coderofsalvation/notie.git"
   }
 }

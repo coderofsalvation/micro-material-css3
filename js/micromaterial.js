@@ -1,4 +1,4 @@
-var micromaterial = function(){
+var micromaterial = function(zepto_or_jquery){
 
   this.isLoading = false
   this.page = {
@@ -21,6 +21,18 @@ var micromaterial = function(){
     this.showPage( this.page.last )
   }
 
+  this.showBackButton = function(state){
+    var show = '0px'
+    var hide = '-500px'
+    if( state ){
+      $('button#back').css({'margin-left': show}) // hide back button on homepage
+      $('img#header_logo').css({'margin-left': hide})
+    } else {
+      $('button#back').css({'margin-left': hide})
+      $('img#header_logo').css({'margin-left': show})
+    }
+  }
+
   this.showPage = function(id){
     var me = this;
     if( !this.page.home ) this.page.home = id // remember first page as homepage
@@ -30,10 +42,7 @@ var micromaterial = function(){
       $('.page').css({'display':'none'})
       $(id).css({'display':'block'})
       $(id).css({'height': ($(window).height() - $('#header').height())+"px" }) 
-      if( id == me.page.home ) 
-        $('button#back').css({'margin-left': '-500px'}) // hide back button on homepage
-      else
-        $('button#back').css({'margin-left': '0px'})
+      me.showBackButton( id != me.page.home )
       me.loading(false)
     })
   }
@@ -48,15 +57,20 @@ var micromaterial = function(){
   }
 
   this.init = function(){
+    if( $ == undefined ) return console.error("micromaterialcss3: please include jquery or zepto")
     $('button#back').on('click', this.back.bind(this) )
   }
 
   this.init()
 
-  return {
+  var obj = {
     back: this.back.bind(this), 
     showPage: this.showPage.bind(this), 
     loading: this.loading.bind(this), 
     registerElement: this.registerElement.bind(this)
   }
+  for ( var i in obj  ) $[i] = obj[i]
+  return obj
 }
+
+new micromaterial() // create!
