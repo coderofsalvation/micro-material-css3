@@ -35,7 +35,7 @@
         <div id="app">
           <div id="header">
             <button id="back" class="pull-left">&lt;</button>
-            <img class="pull-left" src="img/logo.png" style="height:57px"></img>
+            <img class="pull-left grow" id="header_logo" src="img/logo.png" style="height:57px"></img>
             <h1>Hello world</h1>
             <button id="header_menu" class="pull-right">&equiv;</button>
           </div>  
@@ -45,6 +45,7 @@
               <x-foo class="x-foo" data-value="" data-id="foo"></x-foo>
               <button class="wide" id="input">input text</button><br>
               <button class="wide" id="button-media">open media-page</button><br>
+              <button class="wide" id="button-form">open form-page</button><br>
             </div>
 
             <!-- Page: Media -->
@@ -52,6 +53,11 @@
               <x-mediabutton id="campic"   type="camera"></x-mediabutton>
               <x-mediabutton id="camvideo" type="video" ></x-mediabutton>
               <x-mediabutton id="audio"    type="audio" ></x-mediabutton>
+            </div>
+
+            <!-- Page: Form -->
+            <div id="form" class="clear page" style="display:none">
+              <x-input-string placeholder="foo" type="text"/>
             </div>
           </div>
 
@@ -66,7 +72,6 @@
            </div>
            <br><br>
         </template>
-        <script type="text/javascript" src="js/elements/x-foo.js"></script>
 
         <template id="x-mediabutton-camera">
           <label class="file">
@@ -86,8 +91,14 @@
             <span>Record audio</span>
           </label>
         </template>
-        <script type="text/javascript" src="js/elements/x-mediabutton.js"></script>
 
+        <!-- material text input -->
+        <template id="x-input-string">
+          <b class="inputlabel"></b>
+          <input type="text" autocorrect="off" title="" placeholder="" class="form-control">
+          <span class="highlight"></span>
+          <span class="bar"></span></div> 
+        </template>
 
         <link rel="stylesheet" type="text/css" href="css/ui.css"/>
         <link rel="stylesheet" type="text/css" href="css/index.css"/>
@@ -96,6 +107,8 @@
         <script type="text/javascript" src="js/notie.min.js"></script>
         <script type="text/javascript" src="js/document-register-element.js"></script>
         <script type="text/javascript" src="js/micromaterial.js"></script>
+        <script type="text/javascript" src="js/elements/x-mediabutton.js"></script>
+        <script type="text/javascript" src="js/elements/x-input-string.js"></script>
         <script type="text/javascript" src="index.js"></script>
     </body>
 </html>

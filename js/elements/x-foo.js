@@ -53,3 +53,4 @@ var xFoo = function(){
 
 }
 
+$.registerElement("x-foo", new xFoo )

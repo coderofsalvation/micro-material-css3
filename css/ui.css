@@ -9,9 +9,9 @@ label.file {
   border:none;
   font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
   font-size: 18px;
-  padding: 13px;
-  padding-left:15px;
-  padding-right:15px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  text-indent:15px;
 }
 
 button#back, 
@@ -23,13 +23,20 @@ button#header_menu {
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.3);
 }
 
-button,label.file {
+button#header_menu {
+  padding-right:19px;
+}
+
+button,label.file{
   background-color:rgb(64, 128, 255);
   color: #FFF;
   pointer: cursor;
   -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.0);
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.0);
   text-transform: capitalize;
+}
+
+button,label.file, input {
   border-radius: 5px;
 }
 
@@ -122,4 +129,22 @@ div#loadscreen{
   height: 100%;
   transition: height .3s;
   background: #000;
+}
+
+/*
+ * Material controls
+ */
+
+.border {
+  border: 1px solid rgb(64,  128,  255) !important;
+}
+
+.form-control{
+  padding:0;
+  border:none;
+  width:100% !important;
+  border-bottom: 1px solid #DDD;
+}
+.error .form-control {
+  border-bottom: 2px solid red !important;
 }

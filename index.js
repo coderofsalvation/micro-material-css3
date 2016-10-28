@@ -36,10 +36,8 @@ $('#input').on('click', function(e){
   })
 })
 
-$.registerElement("x-foo", new xFoo ) // registers dom element <x-foo> to browser
-$.registerElement("x-mediabutton", new xMediaButton ) 
-//$.registerElement("x-template", new xTemplate ) // *TODO* 
 $('#button-media').on('click', function(){ $.showPage('#media') })
+$('#button-form').on('click', function(){ $.showPage('#form') })
 
 setTimeout( function(){
   $.showPage('#home')

@@ -12,37 +12,37 @@
 //
 // html:
 //
-//   <!-- material text span -->
-//   <template id="x-foo">
-//     <b class="foo"></b>
-//     <span type="text" autocorrect="off" title="" placeholder="" class="form-control">
+//   <!-- material text input -->
+//   <template id="x-input-string">
+//     <b class="inputlabel"></b>
+//     <input type="text" autocorrect="off" title="" placeholder="" class="form-control">
 //     <span class="highlight"></span>
 //     <span class="bar"></span></div> 
 //   </template>
 //
-//   <x-span-string placeholder="foo" type="text"/>
+//   <x-input-string placeholder="foo" type="text"/>
 
-var xMediaButton = function(){
+var xInputString = function(){
 
   this.createdCallback = function(){
   }
 
   this.attachedCallback = function(){
-	var type = this.getAttribute("type")
-	if( !type ) throw 'data-type attribute not found in <mediabutton>'
-	if (! ('ontouchstart' in document.documentElement) )
-	  return false; // record audio mostly is supported on desktop pc browser's (not ios etc)
-    this.innerHTML = document.getElementById( "x-mediabutton-"+type ).innerHTML
+    this.innerHTML = document.getElementById("x-input-string").innerHTML
+    $(this).find('b.inputlabel').text( this.getAttribute("title") )
     var input = this.input = $(this).find('input')[0]
-	var attributes = []
+    var attributes = ["title", "placeholder", "name", "value", "type"]
     for ( var i in attributes  ) {
-	  if( i == "text" ) continue
       var attribute = attributes[i]
       if( this.getAttribute( attribute ) ) input.setAttribute( attribute, this.getAttribute(attribute) )
     }
-    input.setAttribute('name', this.getAttribute('id'))
-    input.setAttribute('id', this.getAttribute('id'))
-	this.setAttribute( 'id', "_"+this.getAttribute('id') )
+    this.setValidator = function(validator){
+      $(input).on('keyup change', validator )
+    }
+    this.value = function(value){
+      if( value ) input.value = value
+      else return input.value
+    }
   }
 
   this.detachedCallback = function(){}
@@ -53,8 +53,10 @@ var xMediaButton = function(){
     } else if (value == null) {
       // removed
     } else {
+      this.data.input.setAttribute(name, value)
     }
   }  
 
 }
-$.registerElement("x-mediabutton", new xMediaButton ) 
+
+$.registerElement("x-input-string", new xInputString ) 
