@@ -1,21 +1,22 @@
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    outline:none;
 }
 
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#F2F2F2;
-    background-image:linear-gradient(top, #DDDDDD 0%, #F2F2F2 51%);
-    background-image:-webkit-linear-gradient(top, #DDDDDD 0%, #F2F2F2 51%);
-    background-image:-ms-linear-gradient(top, #DDDDDD 0%, #F2F2F2 51%);
+    background-color:#DDDDDD;
+    background-image:linear-gradient(top, #FFFFFF 0%, #DDDDDD 51%);
+    background-image:-webkit-linear-gradient(top, #FFFFFF 0%, #DDDDDD 51%);
+    background-image:-ms-linear-gradient(top, #FFFFFF 0%, #DDDDDD 51%);
     background-image:-webkit-gradient(
         linear,
         left top,
         left bottom,
-        color-stop(0, #DDDDDD),
-        color-stop(0.51, #F2F2F2)
+        color-stop(0, #FFFFFF),
+        color-stop(0.51, #DDDDDD)
     );
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
@@ -38,6 +39,17 @@ h1 {
     overflow:visible;
     padding:0px;
     text-align:center;
+}
+
+h2, .page {
+    font-family: Arial;
+    font-size:24px;
+    font-weight:300;
+}
+
+.page {
+  transition:all 0.5s ease;
+  font-size: 16px;
 }
 
 .event {
@@ -111,7 +123,7 @@ template {
   background-color:#FFF;
   position:fixed;
   height:57px;
-  top:0px;
+  top:-87px;
   right:0px;
   left:0px;
   z-index:999;
@@ -139,4 +151,38 @@ div#container{
 
 .centered {
   text-align:center;
+}
+
+/*
+ * loading (with spinner see spinner.css)
+ */
+
+div#loadscreen{
+  pointer-events: none;
+  position:absolute;
+  top:0px;
+  left:0;
+  background-color: #FFF;
+  width:100%;
+  height:100%;
+  z-index:1000;
+  text-align:center;
+  transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+}
+
+
+/**
+ * override when showing header
+ */
+
+.showheader div#loadscreen {
+  top:87px;
+}
+.showheader #app div#header {
+  top:0px !important;
+}
+.showheader #app .page {
+  margin-top:87px !important;
 }

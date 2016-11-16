@@ -2,7 +2,6 @@ var micromaterial = function(zepto_or_jquery){
 
   this.isLoading = false
   this.page = {
-    home: false, 
     last: false, 
     current: false
   }
@@ -21,6 +20,13 @@ var micromaterial = function(zepto_or_jquery){
     this.showPage( this.page.last )
   }
 
+  this.showHeader = function (state) {
+    if( state ){
+      $('body').addClass("showheader")
+      $('img#header_logo').css({'margin-left': '0px'})
+    }else $('body').removeClass("showheader")
+  }
+
   this.showBackButton = function(state){
     var show = '0px'
     var hide = '-500px'
@@ -33,17 +39,21 @@ var micromaterial = function(zepto_or_jquery){
     }
   }
 
-  this.showPage = function(id){
+  this.showMenu = function(){
+    $('.hidemenu').removeClass('hidemenu')
+  }
+
+  this.showPage = function(id,cb){
     var me = this;
-    if( !this.page.home ) this.page.home = id // remember first page as homepage
     this.page.last = this.page.current  // remember current page as last page
     this.page.current = id        // remember current page
     this.loading(true, function(){
       $('.page').css({'display':'none'})
       $(id).css({'display':'block'})
       $(id).css({'height': ($(window).height() - $('#header').height())+"px" }) 
-      me.showBackButton( id != me.page.home )
+      me.showBackButton( $(id+".nobackbutton").length == 0 )
       me.loading(false)
+      if( cb ) cb()
     })
   }
 
@@ -66,6 +76,7 @@ var micromaterial = function(zepto_or_jquery){
   var obj = {
     back: this.back.bind(this), 
     showPage: this.showPage.bind(this), 
+    showHeader: this.showHeader.bind(this), 
     loading: this.loading.bind(this), 
     registerElement: this.registerElement.bind(this)
   }
