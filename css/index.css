@@ -186,3 +186,12 @@ div#loadscreen{
 .showheader #app .page {
   margin-top:87px !important;
 }
+
+.box {
+	background-color: #FFF;
+	-webkit-box-shadow: 3px 4px 4px rgba(0, 0, 0, .2);
+	border-top: 1px solid #EEE;
+	margin: 0 0 20px 0;
+	padding: 15px 30px 15px 15px;
+	border-left: 1px solid #EEE;
+}
