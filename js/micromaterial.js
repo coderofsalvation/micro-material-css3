@@ -50,7 +50,7 @@ var micromaterial = function(zepto_or_jquery){
     this.loading(true, function(){
       $('.page').css({'display':'none'})
       $(id).css({'display':'block'})
-      $(id).css({'height': ($(window).height() - $('#header').height())+"px" }) 
+      $('#container').css({'height': ($(window).height() - $('#header').height())+"px" }) 
       me.showBackButton( $(id+".nobackbutton").length == 0 )
       me.loading(false)
       if( cb ) cb()

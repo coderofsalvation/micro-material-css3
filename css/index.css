@@ -135,7 +135,11 @@ template {
 }
 
 div#container{
-  margin-top:87px;
+	-webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+	box-sizing: border-box;
+  height:100%;
+  margin-top:0px;
   overflow:hidden;
   overflow-y:scroll;
 }
@@ -181,10 +185,10 @@ div#loadscreen{
   top:87px;
 }
 .showheader #app div#header {
-  top:0px !important;
-}
-.showheader #app .page {
   margin-top:87px !important;
+}
+.showheader #app #container {
+  margin-top:81px !important;
 }
 
 .box {
@@ -194,4 +198,8 @@ div#loadscreen{
 	margin: 0 0 20px 0;
 	padding: 15px 30px 15px 15px;
 	border-left: 1px solid #EEE;
+}
+
+.clear {
+  clear:both;
 }
