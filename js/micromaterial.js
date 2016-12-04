@@ -58,6 +58,7 @@ var micromaterial = function(zepto_or_jquery){
     this.loading(true, function(){
       $('.page').css({'display':'none'})
       $(id).css({'display':'block'})
+			$('#header h2').html( $(id).data('title') || '' ) 
       $('#container').css({'height': ($(window).height() - $('#header').height())+"px" }) 
       $('.page').css({'min-height': ($(window).height() - $('#header').height())+"px" }) 
       me.showBackButton( $(id+".nobackbutton").length == 0 )

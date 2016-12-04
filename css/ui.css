@@ -26,6 +26,7 @@ button#header_menu {
 
 button#header_menu {
   padding-right:19px;
+  padding-top:16px;
 }
 
 button,label.file{
@@ -138,4 +139,10 @@ label > * {
 }
 .error .form-control {
   border-bottom: 2px solid red !important;
+}
+
+.noborder {
+  box-shadow:none !important;
+  -webkit-box-shadow:none !important;
+  border:none !important;
 }
