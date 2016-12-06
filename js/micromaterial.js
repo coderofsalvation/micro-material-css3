@@ -27,7 +27,6 @@ var micromaterial = function(zepto_or_jquery){
   this.showHeader = function (state) {
     if( state ){
       $('body').addClass("showheader")
-      $('img#header_logo').css({'margin-left': '0px'})
     }else{
       $('body').removeClass("showheader")
       $('#container').css({'height': '100%'})

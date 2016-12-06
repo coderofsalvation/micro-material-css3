@@ -131,7 +131,7 @@ template {
 
 .page {  
   min-height:100%;
-  padding: 5%;
+  padding: 2% 3%;
 }
 
 div#container{
@@ -208,5 +208,22 @@ div#loadscreen{
   display:inline;
   font-size: 20px;
   color: rgb(64, 128, 255);
-  line-height: 50px;
+  line-height: 56px;
+  font-weight:bold;
+}
+
+hr {
+  border-radius: 0px;
+  box-shadow: none;
+  color: #CCC;
+  border: none;
+  border-top: 1px solid #CCC;
+}
+
+.box .row {
+  padding: 20px 0px;
+}
+
+.box.stickbottom {
+  margin-bottom:0;
 }
