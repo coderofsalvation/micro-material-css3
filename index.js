@@ -1,3 +1,5 @@
+$.micromaterial = new micromaterial($)
+
 $('#header_menu').on('click', function(e){
   notie.select('Menu', ' <b class="icon">▼</a> ', [
     {

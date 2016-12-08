@@ -92,5 +92,3 @@ var micromaterial = function(zepto_or_jquery){
   for ( var i in obj  ) $[i] = obj[i]
   return obj
 }
-
-new micromaterial() // create!
