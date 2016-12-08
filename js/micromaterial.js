@@ -90,5 +90,6 @@ var micromaterial = function(zepto_or_jquery){
     registerElement: this.registerElement.bind(this)
   }
   for ( var i in obj  ) $[i] = obj[i]
+  $.micromaterial = this
   return obj
 }
